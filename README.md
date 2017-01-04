@@ -6,6 +6,14 @@ A silly implementation of a short read mapper for the course DD3436.
 
      pip install sillymap
 
+## Example
+
+    $ sillymap index
+    This should index your input fasta
+
+    $ sillymap map
+    This should map your sequences against an index
+
 ## Course goals and content
 
 * Distributed project handling, including using version control system for source code.
