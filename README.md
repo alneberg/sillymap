@@ -4,27 +4,27 @@ A silly implementation of a short read mapper for the course DD3436.
 
 ## Course goals and content
 
-Distributed project handling, including using version control system for source code.
+* Distributed project handling, including using version control system for source code.
     - Git
     - Github
     - Pypi
     - bioconda
-Important libraries in Python.
+* Important libraries in Python.
     - Pandas
     - Biopython
     - scikit-bio
     - Jupyter notebook
     - Matplotlib
-Efficient programming in Python.
+* Efficient programming in Python.
     - Numpy
     - Scipy
     - profiling
     - Pypy
-Parallel programming in Python.
+* Parallel programming in Python.
     - threads
     - multiprocessing
     - MPI
-Efficient debugging.
+* Efficient debugging.
     - ipdb
 
 
