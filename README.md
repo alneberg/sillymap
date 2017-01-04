@@ -2,6 +2,10 @@
 
 A silly implementation of a short read mapper for the course DD3436.
 
+## Installation
+
+     pip install sillymap
+
 ## Course goals and content
 
 * Distributed project handling, including using version control system for source code.
