@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='sillymap',
         version='0.0.1',
@@ -7,7 +7,7 @@ setup(name='sillymap',
         author='Johannes Alneberg',
         author_email='alneberg@kth.se',
         license='MIT',
-        packages=['sillymap'],
+        packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
         zip_safe=False,
         scripts=['bin/sillymap']
    )

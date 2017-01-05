@@ -1,3 +1,5 @@
 dist/*
 build/*
 sillymap.egg-info
+*.pyc
+*.swp
