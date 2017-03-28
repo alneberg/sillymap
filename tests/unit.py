@@ -6,10 +6,10 @@ from sillymap.rank_lookup import Rank
 
 class TestBW(unittest.TestCase):
     def test_basic_bw(self):
-        self.assertEqual(burrows_wheeler("mississippi"), "ipssm$pissii")
+        self.assertEqual(burrows_wheeler("mississippi"), ("ipssm$pissii", [11,10,7,4,1,0,9,8,6,3,5,2]))
 
     def test_empty(self):
-        self.assertEqual(burrows_wheeler(""), "$")
+        self.assertEqual(burrows_wheeler(""), ("$", [0]))
 
 class TestCountLookup(unittest.TestCase):
     def test_basic_count_lookup(self):
