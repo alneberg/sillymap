@@ -3,6 +3,7 @@ import unittest
 from sillymap.burrows_wheeler import burrows_wheeler
 from sillymap.count_lookup import count_lookup
 from sillymap.rank_lookup import Rank
+from sillymap.backwards_search import backwards_search
 
 class TestBW(unittest.TestCase):
     def test_basic_bw(self):
@@ -37,6 +38,15 @@ class TestRankLookup(unittest.TestCase):
         self.assertEqual(rank.rank(-1,"i"), 0)
         self.assertEqual(rank.rank(0,"i"), 1)
         self.assertEqual(rank.rank(11,"s"), 4)
+
+class TestBackwardsSearch(unittest.TestCase):
+    def test_basic_backwards_search(self):
+        cl = count_lookup("ipssm$pissii")
+        rank = Rank()
+        rank.add_text("ipssm$pissii")
+        s,e = backwards_search("iss", cl, rank, 12)
+        self.assertEqual(s, 3)
+        self.assertEqual(e, 4)
 
 if __name__ == '__main__':
     unittest.main()
