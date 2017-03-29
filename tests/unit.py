@@ -17,12 +17,17 @@ class TestCountLookup(unittest.TestCase):
         self.assertEqual(c["i"], 0)
         self.assertEqual(c["m"], 1)
 
-    def test_basic_count_lookup(self):
+    def test_second_count_lookup(self):
         c = count_lookup("mississippi")
         self.assertEqual(c['i'], 0)
         self.assertEqual(c['m'], 4)
         self.assertEqual(c['p'], 5)
         self.assertEqual(c['s'], 7)
+
+    def test_third_count_lookup(self):
+        c = count_lookup("ipssm$pissii")
+        self.assertEqual(c['s'], 8)
+        self.assertEqual(c['i'], 1)
 
 class TestRankLookup(unittest.TestCase):
     def test_basic_rank_lookup(self):
