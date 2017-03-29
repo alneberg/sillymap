@@ -48,5 +48,21 @@ class TestBackwardsSearch(unittest.TestCase):
         self.assertEqual(s, 3)
         self.assertEqual(e, 4)
 
+    def test_basic_backwards_search2(self):
+        cl = count_lookup("ipssm$pissii")
+        rank = Rank()
+        rank.add_text("ipssm$pissii")
+        s, e = backwards_search("miss", cl, rank, 12)
+        self.assertEqual(s, 5)
+        self.assertEqual(e, 5)
+
+    def test_basic_backwards_search3(self):
+        cl = count_lookup("ipssm$pissii")
+        rank = Rank()
+        rank.add_text("ipssm$pissii")
+        s, e = backwards_search("ppi", cl, rank, 12)
+        self.assertEqual(s, 7)
+        self.assertEqual(e, 7)
+
 if __name__ == '__main__':
     unittest.main()
