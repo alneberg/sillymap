@@ -1,0 +1,24 @@
+language: python
+python:
+  - "3.6"
+# command to install dependencies
+virtualenv:
+  system_site_packages: true
+before_install:
+   #Uses miniconda installation of scientific python packages instead of building from source
+   #or using old versions supplied by apt-get. Source: https://gist.github.com/dan-blanchard/7045057
+   - wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+   - chmod +x miniconda.sh
+   - ./miniconda.sh -b
+   - export PATH=/home/travis/miniconda3/bin:$PATH
+   - conda update --yes conda
+   - sudo apt-get update -qq
+install:
+   - python setup.py install
+# command to run tests
+script:
+   - python -m unittest tests/unit.py
+   - python -m unittest tests/integration.py
+branches:
+  only:
+    - master
