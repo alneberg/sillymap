@@ -20,7 +20,7 @@ class Rank():
     """
 
     def __init__(self):
-        self.rank_dict = defaultdict(lambda: defaultdict(int))
+        self.rank_dict = {}
         self.constructed = False
 
     def add_text(self, text):
@@ -28,6 +28,9 @@ class Rank():
         for i, c in enumerate(text):
             char_count[c] += 1
             for char, count in char_count.items():
+                if not i in self.rank_dict:
+                    self.rank_dict[i] = {}
+
                 self.rank_dict[i][char] = count
 
         self.constructed = True
@@ -36,4 +39,8 @@ class Rank():
         if not self.constructed:
             warnings.warn(("Fetched rank before text was added, "
                            "this will always return 0")) 
+        if not i in self.rank_dict:
+            return 0
+        if not c in self.rank_dict[i]:
+            return 0
         return self.rank_dict[i][c]
