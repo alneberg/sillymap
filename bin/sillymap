@@ -6,8 +6,6 @@ from sillymap.index import index_main
 from sillymap.mapper import mapper_main
 import argparse
 
-def main(args):
-    pass
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
