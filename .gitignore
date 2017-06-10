@@ -3,3 +3,4 @@ build/*
 sillymap.egg-info
 *.pyc
 *.swp
+data/*
