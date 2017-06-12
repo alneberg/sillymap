@@ -3,5 +3,7 @@ build/*
 sillymap.egg-info
 *.pyc
 *.swp
+*.so
+*.c
 data/*
 memprofile*

@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from Cython.Build import cythonize
 
 setup(name='sillymap',
         version='0.2.0',
@@ -9,5 +10,6 @@ setup(name='sillymap',
         license='MIT',
         packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
         zip_safe=False,
-        scripts=['bin/sillymap']
+        scripts=['bin/sillymap'],
+        ext_modules = cythonize(["sillymap/burrows_wheeler.pyx", "sillymap/rank_lookup.pyx", "sillymap/count_lookup.pyx", "sillymap/backwards_search.pyx", "sillymap/index.pyx", "sillymap/mapper.pyx"])
    )
