@@ -36,11 +36,9 @@ class Rank():
         self.constructed = True
 
     def rank(self, i, c):
-        if not self.constructed:
-            warnings.warn(("Fetched rank before text was added, "
-                           "this will always return 0")) 
-        if not i in self.rank_dict:
+        """Should only be called if self.constructed is True.
+        For speed reasons, this is not checked at every call."""
+        try:
+            return self.rank_dict[i][c]
+        except KeyError:
             return 0
-        if not c in self.rank_dict[i]:
-            return 0
-        return self.rank_dict[i][c]
