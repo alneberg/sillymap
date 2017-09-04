@@ -13,7 +13,7 @@ def index_main(args):
                 reference_id = line[1:].strip()
             else:
                 reference_seq += line.strip()
-    
+
     bw, sa_index = burrows_wheeler(reference_seq)
     cl = count_lookup(bw)
     rank = Rank()
@@ -21,4 +21,4 @@ def index_main(args):
 
     ref_output = "{}.silly".format(args.reference)
     with open(ref_output, "wb") as pickle_fh:
-        pickle.dump((cl, rank, bw, sa_index), pickle_fh) 
+        pickle.dump((cl, rank, bw, sa_index), pickle_fh)
