@@ -3,6 +3,8 @@ from .count_lookup import count_lookup
 from .rank_lookup import Rank
 from .burrows_wheeler import burrows_wheeler
 
+import numpy as np
+
 def index_main(args):
     with open(args.reference, 'r') as ref_fh:
         reference_seq = ""
@@ -14,7 +16,7 @@ def index_main(args):
             else:
                 reference_seq += line.strip()
     reference_seq_binary = translate_to_binary(reference_seq)
-    bw, sa_index = burrows_wheeler(reference_seq)
+    bw, sa_index = burrows_wheeler(reference_seq_binary)
     cl = count_lookup(bw)
     rank = Rank()
     rank.add_text(bw)
