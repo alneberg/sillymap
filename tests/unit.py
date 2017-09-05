@@ -4,13 +4,23 @@ from sillymap.burrows_wheeler import burrows_wheeler
 from sillymap.count_lookup import count_lookup
 from sillymap.rank_lookup import Rank
 from sillymap.backwards_search import backwards_search
+import numpy as np
+from numpy.testing import assert_array_equal
+
+#mississippi as array:
+base_array = np.array([2,1,4,4,1,4,4,1,3,3,1])
+bw_transform = np.array([1,3,4,4,2,0,3,1,4,4,1,1])
+suffix_array = np.array([11,10,7,4,1,0,9,8,6,3,5,2])
+
 
 class TestBW(unittest.TestCase):
     def test_basic_bw(self):
-        self.assertEqual(burrows_wheeler("mississippi"), ("ipssm$pissii", [11,10,7,4,1,0,9,8,6,3,5,2]))
+        assert_array_equal(burrows_wheeler(base_array)[0], bw_transform)
+        assert_array_equal(burrows_wheeler(base_array)[1], suffix_array)
 
     def test_empty(self):
-        self.assertEqual(burrows_wheeler(""), ("$", [0]))
+        assert_array_equal(burrows_wheeler(np.array([]))[0], np.array([0]))
+        assert_array_equal(burrows_wheeler(np.array([]))[1], np.array([0]))
 
 class TestCountLookup(unittest.TestCase):
     def test_basic_count_lookup(self):

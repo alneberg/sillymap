@@ -1,28 +1,4 @@
-class SubString(object):
-    # Class written by @MSeifert:
-    # https://stackoverflow.com/a/41669542
-    # slots reduce the memory overhead of the instances
-    __slots__ = ('str_', 'idx', 'str_len')
-
-    def __init__(self, str_, idx, str_len):
-        self.str_ = str_
-        self.idx = idx
-        self.str_len = str_len
-
-    # sorted only requires "<" to be implemented so we only need __lt__
-    def __lt__(self, other):
-        # temporarly create explicit substrings but only temporaries for the comparison
-        #Optimized case to speed things up
-        if self.idx + 10 < self.str_len and other.idx + 10 < self.str_len:
-            if self.str_[self.idx:self.idx+10] < other.str_[other.idx:other.idx+10]:
-                return True
-            elif self.str_[self.idx:self.idx+10] > other.str_[other.idx:other.idx+10]:
-                return False
-        # this is the general case
-        return self.str_[self.idx:] + self.str_[:self.idx] < other.str_[other.idx:] + other.str_[:other.idx]
-
-    def __repr__(self):
-        return self.idx
+import numpy as np
 
 def burrows_wheeler(text):
     """Calculates the burrows wheeler transform of <text>.
@@ -30,14 +6,31 @@ def burrows_wheeler(text):
     returns the burrows wheeler string and the suffix array indices
     The text is assumed to not contain the character $"""
 
-    text += "$"
+    text = np.append(text,0)
+    seq_len = len(text)
+    # suffix array indices
+    sa_i = my_suffix_sort(text, seq_len)
 
-    text_len = len(text)
-    # suffix arrau indices
-    sa_i = list(range(text_len))
-    sa_i.sort(key=lambda i: SubString(text, i, text_len))
+    # burrows wheeler
+    bw = text[sa_i - 1]
 
-    # burrows wheeler as list
-    bw_l = [text[i-1] for i in sa_i]
+    return bw, sa_i
 
-    return "".join(bw_l), sa_i
+def my_suffix_sort(input_dna_array, seq_len):
+    """My sort method for suffix arrays of an numpy array consisting of 0,1,2,3,4 :s only"""
+    original_index = np.arange(seq_len)
+    return _recursive_sort(original_index, input_dna_array, 0)
+
+def _recursive_sort(indices, input_dna_array, iteration):
+    output = np.negative(np.ones_like(indices))
+    index = 0
+    for val in [0,1,2,3,4]:
+        new_indices = indices[np.where(input_dna_array[indices + iteration] == val)]
+        ind_len = len(new_indices)
+        if ind_len > 1:
+            output[index:index+ind_len] = _recursive_sort(new_indices, input_dna_array, iteration+1)
+            index += ind_len
+        elif ind_len == 1:
+            output[index] = new_indices
+            index += 1
+    return output

@@ -13,7 +13,7 @@ def index_main(args):
                 reference_id = line[1:].strip()
             else:
                 reference_seq += line.strip()
-
+    reference_seq_binary = translate_to_binary(reference_seq)
     bw, sa_index = burrows_wheeler(reference_seq)
     cl = count_lookup(bw)
     rank = Rank()
@@ -22,3 +22,11 @@ def index_main(args):
     ref_output = "{}.silly".format(args.reference)
     with open(ref_output, "wb") as pickle_fh:
         pickle.dump((cl, rank, bw, sa_index), pickle_fh)
+
+def translate_to_binary(seq_string):
+    nucl_to_bin = {'A': 1, 'C': 2, 'G': 3, 'T': 4}
+    try:
+        return np.asarray([nucl_to_bin[nucl] for nucl in seq_string], dtype='B')
+    except KeyError:
+        raise ValueError("Sequence contain more than standard nucleotides ACGT, aborting.")
+
