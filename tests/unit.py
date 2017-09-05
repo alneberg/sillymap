@@ -24,53 +24,53 @@ class TestBW(unittest.TestCase):
 
 class TestCountLookup(unittest.TestCase):
     def test_basic_count_lookup(self):
-        c = count_lookup("mi")
-        self.assertEqual(c["i"], 0)
-        self.assertEqual(c["m"], 1)
+        c = count_lookup(np.array([2,1]))
+        self.assertEqual(c[1], 0)
+        self.assertEqual(c[2], 1)
 
     def test_second_count_lookup(self):
-        c = count_lookup("mississippi")
-        self.assertEqual(c['i'], 0)
-        self.assertEqual(c['m'], 4)
-        self.assertEqual(c['p'], 5)
-        self.assertEqual(c['s'], 7)
+        c = count_lookup(base_array)
+        self.assertEqual(c[1], 0)
+        self.assertEqual(c[2], 4)
+        self.assertEqual(c[3], 5)
+        self.assertEqual(c[4], 7)
 
     def test_third_count_lookup(self):
-        c = count_lookup("ipssm$pissii")
-        self.assertEqual(c['s'], 8)
-        self.assertEqual(c['i'], 1)
+        c = count_lookup(bw_transform)
+        self.assertEqual(c[4], 8)
+        self.assertEqual(c[1], 1)
 
 class TestRankLookup(unittest.TestCase):
     def test_basic_rank_lookup(self):
         rank = Rank()
-        rank.add_text("ipssm$pissii")
+        rank.add_text(bw_transform)
 
-        self.assertEqual(rank.rank(-1,"i"), 0)
-        self.assertEqual(rank.rank(0,"i"), 1)
-        self.assertEqual(rank.rank(11,"s"), 4)
+        self.assertEqual(rank.rank(-1,1), 0)
+        self.assertEqual(rank.rank(0,1), 1)
+        self.assertEqual(rank.rank(11,4), 4)
 
 class TestBackwardsSearch(unittest.TestCase):
     def test_basic_backwards_search(self):
-        cl = count_lookup("ipssm$pissii")
+        cl = count_lookup(bw_transform)
         rank = Rank()
-        rank.add_text("ipssm$pissii")
-        s,e = backwards_search("iss", cl, rank, 12)
+        rank.add_text(bw_transform)
+        s,e = backwards_search(np.array([1,4,4]), cl, rank, 12)
         self.assertEqual(s, 3)
         self.assertEqual(e, 4)
 
     def test_basic_backwards_search2(self):
-        cl = count_lookup("ipssm$pissii")
+        cl = count_lookup(bw_transform)
         rank = Rank()
-        rank.add_text("ipssm$pissii")
-        s, e = backwards_search("miss", cl, rank, 12)
+        rank.add_text(bw_transform)
+        s, e = backwards_search(np.array([2,1,4,4]), cl, rank, 12)
         self.assertEqual(s, 5)
         self.assertEqual(e, 5)
 
     def test_basic_backwards_search3(self):
-        cl = count_lookup("ipssm$pissii")
+        cl = count_lookup(bw_transform)
         rank = Rank()
-        rank.add_text("ipssm$pissii")
-        s, e = backwards_search("ppi", cl, rank, 12)
+        rank.add_text(bw_transform)
+        s, e = backwards_search(np.array([3,3,1]), cl, rank, 12)
         self.assertEqual(s, 7)
         self.assertEqual(e, 7)
 
