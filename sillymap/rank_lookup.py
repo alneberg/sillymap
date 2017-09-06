@@ -35,21 +35,19 @@ class Rank():
             dtype_for_array = 'uint32'
 
         # Store rank in array 
-        self.rank_dict = np.zeros((len(text),4), dtype=dtype_for_array)
-        for char in [1,2,3,4]:
+        self.rank_dict = np.zeros((len(text),5), dtype=dtype_for_array)
+        for char in [0,1,2,3,4]:
             tmp_array = np.zeros_like(text, dtype=dtype_for_array)
             tmp_array[np.where(text == char)] = 1
-            self.rank_dict[:,char-1] = np.cumsum(tmp_array)
+            self.rank_dict[:,char] = np.cumsum(tmp_array)
         
         self.constructed = True
 
     def rank(self, i, c):
         """Should only be called if self.constructed is True.
         For speed reasons, this is not checked at every call."""
-        if c > 0 and i >= 0:
-            return self.rank_dict[i,c-1]
-        elif c == 0 and i >= self.zero_ix:
-            return 1
+        if i != -1:
+            return self.rank_dict[i,c]
         else:
             return 0
 
