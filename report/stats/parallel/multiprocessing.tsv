@@ -1,0 +1,6 @@
+1	11154299	milou	COMPLETED	alneberg	b2010008	'snakemake_multiprocess_mapping_1'	2017-09-07T13:31:53	00:28:16	.	1	1.5	1	m5	/sw/share/slurm/milou/uppmax_jobstats/m5/11154299
+2	11154302	milou	COMPLETED	alneberg	b2010008	'snakemake_multiprocess_mapping_2'	2017-09-07T13:33:40	00:30:03	.	2	2.3	2	m5	/sw/share/slurm/milou/uppmax_jobstats/m5/11154302
+4	11154303	milou	COMPLETED	alneberg	b2010008	'snakemake_multiprocess_mapping_4'	2017-09-07T13:15:14	00:11:37	.	4	2.3	4	m193	/sw/share/slurm/milou/uppmax_jobstats/m193/11154303
+8	11154304	milou	COMPLETED	alneberg	b2010008	'snakemake_multiprocess_mapping_8'	2017-09-07T13:13:04	00:09:27	.	8	2.3	8	m25	/sw/share/slurm/milou/uppmax_jobstats/m25/11154304
+12	11154300	milou	COMPLETED	alneberg	b2010008	'snakemake_multiprocess_mapping_12'	2017-09-07T13:13:01	00:09:24	overbooked:67%,cores_overbooked:12:8,mem_overbooked:96:2.3,core_mem_overbooked:64:2.3	12	2.3	12	m44	/sw/share/slurm/milou/uppmax_jobstats/m44/11154300
+16	11154301	milou	COMPLETED	alneberg	b2010008	'snakemake_multiprocess_mapping_16'	2017-09-07T13:33:05	00:09:00	node_type_overbooked:mem512GB:mem128GB	16	2.3	16	m131	/sw/share/slurm/milou/uppmax_jobstats/m131/11154301

@@ -1,0 +1,17 @@
+100k	1000000	11150369	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:45	00:00:45	.	16	0.2	.	m135	.
+100k	100000	11150366	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:20	00:00:20	.	16	0.0	.	m132	.
+100k	10000	11150368	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:17	00:00:17	.	16	0.0	.	m134	.
+100k	1000	11150380	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:22:02	00:00:13	.	16	0.0	.	m132	.
+100k	100	11150371	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:15	00:00:15	.	16	0.0	.	m137	.
+10k	1000000	11150370	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:47	00:00:47	.	16	0.2	.	m136	.
+10k	100000	11150382	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:22:05	00:00:16	.	16	0.0	.	m134	.
+10k	10000	11150367	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:17	00:00:17	.	16	0.0	.	m133	.
+10k	1000	11150386	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:23:13	00:00:15	.	16	0.0	.	m127	.
+10k	100	11150364	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:21:17	00:00:17	.	16	0.0	.	m130	.
+10M	10000000	11150490	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T16:00:21	00:06:16	node_type_overbooked:mem512GB:mem128GB	16	2.3	16	m127	/sw/share/slurm/milou/uppmax_jobstats/m127/11150490
+1M	10000000	11150487	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:51:05	00:06:59	node_type_overbooked:mem512GB:mem128GB	16	2.0	16	m129	/sw/share/slurm/milou/uppmax_jobstats/m129/11150487
+1M	1000000	11150359	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:23:43	00:00:45	.	16	0.3	.	m129	.
+1M	100000	11150378	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:23:16	00:00:18	.	16	0.0	.	m136	.
+1M	10000	11150360	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:23:13	00:00:15	.	16	0.0	.	m130	.
+1M	1000	11150356	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:22:03	00:00:05	.	16	0.0	.	m137	.
+1M	100	11150374	milou	COMPLETED	alneberg	b2010008	'snakemake_mapping'	2017-09-06T15:23:13	00:00:15	.	16	0.0	.	m134	.

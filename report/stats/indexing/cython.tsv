@@ -1,0 +1,3 @@
+100k	11136016	milou	COMPLETED	alneberg	b2010008	'snakemake_indexing'	2017-09-04T11:52:57	00:00:15	.	16	0.0	.	m151	.
+10k	11136014	milou	COMPLETED	alneberg	b2010008	'snakemake_indexing'	2017-09-04T11:52:55	00:00:13	.	16	0.0	.	m148	.
+1M	11136012	milou	COMPLETED	alneberg	b2010008	'snakemake_indexing'	2017-09-04T12:04:13	00:11:31	overbooked:6%,!!half_overbooked,!!severely_overbooked,node_type_overbooked:mem256GB:mem128GB,cores_overbooked:16:1,mem_overbooked:252.4:0.2,core_mem_overbooked:15.8:0.2	16	0.2	16	m145	/sw/share/slurm/milou/uppmax_jobstats/m145/11136012

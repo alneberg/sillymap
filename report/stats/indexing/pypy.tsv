@@ -1,0 +1,4 @@
+100k	11136293	milou	COMPLETED	alneberg	b2010008	'snakemake_indexing'	2017-09-04T14:46:37	00:00:18	.	16	0.0	.	m68	.
+10k	11136297	milou	COMPLETED	alneberg	b2010008	'snakemake_indexing'	2017-09-04T14:46:35	00:00:13	.	16	0.0	.	m140	.
+10M	11153476	milou	TIMEOUT	alneberg	b2010008	'snakemake_indexing'	2017-09-07T11:32:07	01:00:06	overbooked:31%,!!half_overbooked,node_type_overbooked:mem512GB:mem128GB,cores_overbooked:16:5,mem_overbooked:504.9:3.1,core_mem_overbooked:157.8:3.1	16	3.1	16	m122	/sw/share/slurm/milou/uppmax_jobstats/m122/11153476
+1M	11136295	milou	COMPLETED	alneberg	b2010008	'snakemake_indexing'	2017-09-04T14:53:01	00:06:39	overbooked:6%,!!half_overbooked,!!severely_overbooked,cores_overbooked:16:1,mem_overbooked:126.1:0.4,core_mem_overbooked:7.9:0.4	16	0.4	16	m72	/sw/share/slurm/milou/uppmax_jobstats/m72/11136295
